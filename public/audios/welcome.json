@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "soundFile": "D:\\Nueva carpeta\\r3f-vite-starter\\public\\audios\\welcome.ogg",
+    "duration": 1.75
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.06, "value": "X" },
+    { "start": 0.06, "end": 0.13, "value": "B" },
+    { "start": 0.13, "end": 0.20, "value": "E" },
+    { "start": 0.20, "end": 0.27, "value": "F" },
+    { "start": 0.27, "end": 0.35, "value": "A" },
+    { "start": 0.35, "end": 0.40, "value": "B" },
+    { "start": 0.40, "end": 0.44, "value": "C" },
+    { "start": 0.44, "end": 0.51, "value": "G" },
+    { "start": 0.51, "end": 0.58, "value": "B" },
+    { "start": 0.58, "end": 0.65, "value": "E" },
+    { "start": 0.65, "end": 0.79, "value": "B" },
+    { "start": 0.79, "end": 1.00, "value": "C" },
+    { "start": 1.00, "end": 1.21, "value": "B" },
+    { "start": 1.21, "end": 1.28, "value": "G" },
+    { "start": 1.28, "end": 1.49, "value": "B" },
+    { "start": 1.49, "end": 1.75, "value": "X" }
+  ]
+}
