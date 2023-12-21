@@ -22,13 +22,14 @@ const corresponding = {
   X: "viseme_PP",
 };
 
-export function Avatar(props) {
+export function Avatar({ props, setBackground, scale, positionY}) {
   const {
     playAudio,
     script,
     headFollow,
     smoothMorphTarget,
     morphTargetSmoothing,
+    background,
   } = useControls({
     playAudio: false,
     headFollow: false,
@@ -38,7 +39,15 @@ export function Avatar(props) {
       value: "welcome",
       options: ["welcome", "motoresTurbina"],
     },
+    background: {
+      value: "park",
+      options: ["park", "stPeters", "airport", "street", "sky"]
+    }
   });
+
+  useEffect(() => {
+    setBackground(background)
+  }, [background, setBackground])
 
   const audio = useMemo(() => new Audio(`/audios/${script}.mp3`), [script]);
   const jsonFile = useLoader(THREE.FileLoader, `audios/${script}.json`);
@@ -188,6 +197,8 @@ export function Avatar(props) {
 
   return (
     <group {...props} dispose={null} ref={group}>
+
+      <mesh scale={scale} position-y={positionY}>
       <primitive object={nodes.Hips} />
       <skinnedMesh
         geometry={nodes.Wolf3D_Body.geometry}
@@ -246,6 +257,7 @@ export function Avatar(props) {
         morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
         morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
       />
+      </mesh>
     </group>
   );
 }
