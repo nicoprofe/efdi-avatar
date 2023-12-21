@@ -31,7 +31,7 @@ export function Avatar(props) {
     morphTargetSmoothing,
   } = useControls({
     playAudio: false,
-    headFollow: true,
+    headFollow: false,
     smoothMorphTarget: true,
     morphTargetSmoothing: 0.5,
     script: {
