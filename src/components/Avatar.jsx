@@ -30,6 +30,7 @@ export function Avatar({ props, setBackground, scale, positionY}) {
     smoothMorphTarget,
     morphTargetSmoothing,
     background,
+    avatar,
   } = useControls({
     playAudio: false,
     headFollow: false,
@@ -42,6 +43,10 @@ export function Avatar({ props, setBackground, scale, positionY}) {
     background: {
       value: "park",
       options: ["park", "stPeters", "airport", "street", "sky"]
+    },
+    avatar: {
+      value: "man",
+      options: ["man", "woman"]
     }
   });
 
@@ -162,7 +167,17 @@ export function Avatar({ props, setBackground, scale, positionY}) {
     }
   }, [playAudio, script]);
 
-  const { nodes, materials } = useGLTF("/models/646d9dcdc8a5f5bddbfac913.glb");
+  const { nodes, materials } = useGLTF(
+    avatar === "man"
+    ? "/models/646d9dcdc8a5f5bddbfac913.glb"
+    : "/models/63446d06116d01f44d3b0e45.glb"
+  )
+   
+    
+  
+  
+  
+  
   const { animations: idleAnimation } = useFBX("/animations/Idle.fbx");
   const { animations: angryAnimation } = useFBX(
     "/animations/Angry Gesture.fbx"
@@ -263,3 +278,4 @@ export function Avatar({ props, setBackground, scale, positionY}) {
 }
 
 useGLTF.preload("/models/646d9dcdc8a5f5bddbfac913.glb");
+useGLTF.preload("/models/63446d06116d01f44d3b0e45.glb")
